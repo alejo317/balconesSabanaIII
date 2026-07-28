@@ -46,7 +46,7 @@ const places: Place[] = [
   {
     icon: HeartPulse,
     label: "Salud",
-    name: "Clínicas y centros médicos de primer nivel",
+    name: "Clínicas y centros médicos",
     time: "± 15 min",
   },
 ]

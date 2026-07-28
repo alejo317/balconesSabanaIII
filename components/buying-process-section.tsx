@@ -15,7 +15,7 @@ const steps = [
     icon: MessageCircle,
     title: "Contáctanos",
     description:
-      "Escríbenos y cuéntanos qué buscas. Sin formularios interminables, solo una conversación cercana.",
+      "Escríbenos y cuéntanos qué buscas. Sin formularios largos, solo una conversación cercana.",
   },
   {
     icon: FileText,
@@ -27,7 +27,7 @@ const steps = [
     icon: CalendarDays,
     title: "Agenda una visita",
     description:
-      "Elige el día y la hora que mejor se ajuste a ti. Nos adaptamos a tu ritmo, nunca al revés.",
+      "Elige el día y la hora que mejor se ajuste a ti. Nos adaptamos a tu ritmo.",
   },
   {
     icon: MapPin,

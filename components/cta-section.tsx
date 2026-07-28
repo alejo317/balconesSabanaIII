@@ -10,7 +10,7 @@ export function CtaSection() {
   const inView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="agenda" ref={ref} className="relative min-h-[88vh] w-full overflow-hidden">
+    <section id="agendar" ref={ref} className="relative min-h-[88vh] w-full overflow-hidden">
       {/* Background photography */}
       <Image
         src="/cta-visit.png"
@@ -40,7 +40,7 @@ export function CtaSection() {
           transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="mt-8 max-w-3xl font-serif text-4xl font-light leading-[1.12] tracking-tight text-white text-balance md:text-6xl"
         >
-          Descubre si Balcones de la Sabana III es el lugar para el próximo capítulo de tu familia.
+          Descubre si Balcones de la Sabana III es el lugar para tu próximo capítulo.
         </motion.h2>
 
         <motion.p

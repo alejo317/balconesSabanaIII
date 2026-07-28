@@ -8,7 +8,7 @@ const faqs = [
   {
     question: "¿Dónde está ubicado Balcones de la Sabana?",
     answer:
-      "Nos encontramos en la sabana de Bogotá, a pocos minutos de la ciudad pero rodeados de campo abierto. Con gusto le compartimos la ubicación exacta y coordinamos una visita cuando lo desee.",
+      "Nos encontramos en Cota Cundinamarca, a pocos minutos de la ciudad pero rodeados de naturañeza. Con gusto le compartimos la ubicación exacta y coordinamos una visita cuando lo desee.",
   },
   {
     question: "¿Hay casas disponibles actualmente?",
@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "¿Puedo visitar el proyecto antes de decidir?",
     answer:
-      "Siempre. De hecho, lo preferimos. Le recibe alguien de la familia, caminamos el terreno juntos y resolvemos sus dudas en persona. La decisión la toma usted, a su ritmo.",
+      "Siempre. De hecho, lo preferimos. Lo recibimos con gusto, caminamos el terreno juntos y resolvemos sus dudas en persona. La decisión la toma usted, a su ritmo.",
   },
   {
     question: "¿En qué estado se encuentra la construcción?",

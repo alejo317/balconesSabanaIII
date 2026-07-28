@@ -8,13 +8,13 @@ const benefits = [
     icon: Leaf,
     title: "Naturaleza",
     description:
-      "Amplios espacios verdes, aire puro y el silencio de la sabana como parte de tu día a día.",
+      "Amplios espacios verdes, aire puro y el silencio de la montaña como parte de tu día a día.",
   },
   {
     icon: MapPin,
     title: "Ubicación estratégica",
     description:
-      "A minutos de Bogotá, con la tranquilidad del campo y la cercanía de la ciudad al alcance.",
+      "A minutos de Bogotá, con la tranquilidad de la montaña y la cercanía de la ciudad al alcance.",
   },
   {
     icon: Users,
@@ -32,7 +32,7 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section className="bg-background px-6 py-24 md:py-40">
+    <section id="benefits"  className="bg-background px-6 py-24 md:py-40">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
