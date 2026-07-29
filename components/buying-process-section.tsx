@@ -51,36 +51,37 @@ const steps = [
 
 export function BuyingProcessSection() {
   return (
-    <section className="bg-background px-6 py-24 md:py-40">
-      <div className="mx-auto max-w-4xl">
+    <section className="bg-[#F5F1E8] px-6 py-28 md:py-40">
+      <div className="mx-auto max-w-5xl">
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto mb-20 max-w-2xl text-center md:mb-28"
+          transition={{
+            duration: 0.9,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="mx-auto mb-24 max-w-2xl text-center"
         >
-          <p className="mb-5 text-[0.7rem] font-light uppercase tracking-[0.4em] text-muted-foreground">
+          <p className="mb-5 text-[0.7rem] font-light uppercase tracking-[0.45em] text-[#556B2F]">
             Proceso de compra
           </p>
-          <h2 className="text-balance font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground md:text-5xl lg:text-6xl">
+
+          <h2 className="text-balance font-serif text-4xl font-light leading-[1.08] tracking-tight text-[#2D2D25] md:text-5xl lg:text-6xl">
             Un camino claro hacia tu nuevo hogar.
           </h2>
-          <p className="mt-6 text-pretty text-lg font-light leading-relaxed text-muted-foreground">
-            Cada paso pensado para que decidas con confianza y sin incertidumbre.
+
+          <p className="mt-7 text-lg font-light leading-relaxed text-[#6B6B5E]">
+            Cada paso está pensado para que vivas una experiencia sencilla,
+            transparente y completamente personalizada.
           </p>
         </motion.div>
 
-        <ol className="relative mx-auto max-w-2xl">
-          {/* Vertical guiding line */}
-          <span
-            aria-hidden="true"
-            className="absolute left-[1.375rem] top-2 bottom-2 w-px bg-border md:left-1/2 md:-translate-x-1/2"
-          />
-
-          {steps.map((step, index) => {
+        <ol className="mx-auto max-w-3xl">
+                    {steps.map((step, index) => {
             const Icon = step.icon
-            const isEven = index % 2 === 0
+
             return (
               <motion.li
                 key={step.title}
@@ -89,44 +90,67 @@ export function BuyingProcessSection() {
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{
                   duration: 0.8,
-                  delay: 0.05,
+                  delay: index * 0.08,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="relative mb-16 flex items-start gap-6 last:mb-0 md:mb-24 md:gap-0"
+                className="mb-20 flex items-start gap-8 last:mb-0"
               >
-                {/* Node */}
-                <div className="relative z-10 flex-none md:absolute md:left-1/2 md:-translate-x-1/2">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-card ring-1 ring-border shadow-[0_2px_16px_rgba(0,0,0,0.05)]">
+                {/* Ícono */}
+
+                <div className="flex-none">
+                  <div
+                    className="
+                      flex
+                      h-14
+                      w-14
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-[#F1EEE6]
+                      ring-1
+                      ring-[#DDD4C4]
+                      shadow-[0_8px_24px_rgba(45,45,37,0.06)]
+                    "
+                  >
                     <Icon
-                      className="h-5 w-5 text-accent"
+                      className="h-6 w-6 text-[#556B2F]"
                       strokeWidth={1.5}
                       aria-hidden="true"
                     />
                   </div>
                 </div>
 
-                {/* Content */}
-                <div
-                  className={`flex-1 pt-1 md:w-1/2 ${
-                    isEven
-                      ? "md:pr-16 md:text-right"
-                      : "md:ml-auto md:pl-16 md:text-left"
-                  }`}
-                >
-                  <span className="mb-2 block font-serif text-sm font-light italic text-accent">
+                {/* Contenido */}
+
+                <div className="flex-1 pt-1">
+                  <span
+                    className="
+                      inline-flex
+                      rounded-full
+                      bg-[#F1EEE6]
+                      px-4
+                      py-1.5
+                      text-[0.65rem]
+                      font-medium
+                      uppercase
+                      tracking-[0.25em]
+                      text-[#556B2F]
+                    "
+                  >
                     Paso {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-serif text-2xl font-medium tracking-tight text-foreground md:text-[1.75rem]">
+
+                  <h3 className="mt-4 font-serif text-2xl font-light tracking-tight text-[#2D2D25] md:text-4xl">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-pretty text-[0.95rem] font-light leading-relaxed text-muted-foreground">
+
+                  <p className="mt-5 max-w-xl text-base font-light leading-relaxed text-[#6B6B5E]">
                     {step.description}
                   </p>
                 </div>
               </motion.li>
             )
-          })}
-        </ol>
+          })}        </ol>
       </div>
     </section>
   )

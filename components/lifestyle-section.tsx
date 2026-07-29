@@ -8,47 +8,65 @@ const fadeUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1, ease: [0.22, 1, 0.36, 1] as const },
+    transition: {
+      duration: 1,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
   },
 }
 
 const imageReveal = {
-  hidden: { opacity: 0, scale: 1.06 },
+  hidden: { opacity: 0, scale: 1.05 },
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 1.4, ease: [0.22, 1, 0.36, 1] as const },
+    transition: {
+      duration: 1.3,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
   },
 }
 
 export function LifestyleSection() {
   return (
-    <section className="relative overflow-hidden bg-background text-foreground">
-      <div className="mx-auto max-w-[1400px] px-6 py-28 md:px-10 md:py-40 lg:px-16">
-        {/* Intro */}
+    <section className="relative overflow-hidden bg-[#F5F1E8] text-[#2D2D25]">
+      <div className="mx-auto max-w-[1450px] px-6 py-28 md:px-10 md:py-40 lg:px-16">
+
+        {/* ================= INTRO ================= */}
+
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="max-w-2xl"
+          className="mx-auto max-w-3xl text-center"
         >
-          <span className="text-[0.7rem] font-light uppercase tracking-[0.4em] text-muted-foreground">
+          <span className="text-[0.7rem] font-light uppercase tracking-[0.45em] text-[#556B2F]">
             Una nueva forma de vivir
           </span>
-          <h2 className="mt-6 font-serif text-3xl font-light leading-[1.15] tracking-tight text-balance md:text-5xl lg:text-6xl">
-            No es una casa. Es la vida que siempre imaginaste.
+
+          <h2 className="mt-6 font-serif text-4xl font-light leading-[1.1] tracking-tight text-balance md:text-6xl">
+            No es una casa.
+            <br />
+            Es la vida que siempre imaginaste.
           </h2>
+
+          <p className="mx-auto mt-8 max-w-2xl text-base font-light leading-relaxed text-[#6B6B5E] md:text-lg">
+            Espacios diseñados para disfrutar la tranquilidad, la naturaleza y
+            la cercanía con Bogotá sin renunciar a la comodidad.
+          </p>
         </motion.div>
 
-        {/* Dominant image + first story */}
-        <div className="mt-20 grid grid-cols-1 gap-x-12 gap-y-12 md:mt-28 lg:grid-cols-12">
+        {/* ================= BLOQUE 1 ================= */}
+
+        <div className="mt-24 lg:mt-32">
+
           <motion.figure
             variants={imageReveal}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="relative aspect-[4/5] overflow-hidden lg:col-span-8 lg:aspect-[16/11]"
+            className="relative aspect-[16/9] overflow-hidden"
           >
             <Image
               src="/lifestyle-main.png"
@@ -56,7 +74,7 @@ export function LifestyleSection() {
               fill
               priority
               className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 66vw"
+              sizes="100vw"
             />
           </motion.figure>
 
@@ -64,29 +82,40 @@ export function LifestyleSection() {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="flex items-end lg:col-span-4"
+            viewport={{ once: true }}
+            className="mx-auto mt-14 max-w-4xl text-center"
           >
-            <p className="font-serif text-2xl font-light leading-relaxed text-pretty md:text-3xl">
-              Imagina terminar tu jornada laboral rodeado de naturaleza en lugar de tráfico.
+            <p className="font-serif text-3xl font-light leading-[1.45] text-balance md:text-5xl">
+              Imagina terminar tu jornada laboral rodeado de naturaleza,
+              escuchando el viento entre los árboles en lugar del tráfico.
             </p>
           </motion.div>
+
         </div>
 
-        {/* Second story — text left, image right */}
-        <div className="mt-24 grid grid-cols-1 items-center gap-x-12 gap-y-12 md:mt-40 lg:grid-cols-12">
+        {/* ================= BLOQUE 2 ================= */}
+
+        <div className="mt-32 grid items-center gap-16 lg:mt-44 lg:grid-cols-12">
+
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="order-2 lg:order-1 lg:col-span-5 lg:pr-8"
+            className="lg:col-span-5"
           >
-            <p className="font-serif text-2xl font-light leading-relaxed text-pretty md:text-4xl">
+            <span className="text-[0.65rem] font-light uppercase tracking-[0.4em] text-[#556B2F]">
+              Pensado para la familia
+            </span>
+
+            <h3 className="mt-6 font-serif text-3xl font-light leading-tight md:text-5xl">
               Imagina a tus hijos creciendo con más espacio.
-            </p>
-            <p className="mt-8 max-w-md text-base font-light leading-relaxed text-muted-foreground">
-              Mañanas al aire libre, tardes sin pantallas y la libertad de correr descalzos sobre el pasto. Aquí la infancia sucede a otro ritmo.
+            </h3>
+
+            <p className="mt-8 max-w-md text-base font-light leading-relaxed text-[#6B6B5E]">
+              Mañanas al aire libre, tardes sin pantallas y la libertad de correr
+              descalzos sobre el pasto. Aquí la infancia sucede a otro ritmo,
+              rodeada de naturaleza y tranquilidad.
             </p>
           </motion.div>
 
@@ -95,65 +124,119 @@ export function LifestyleSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="relative order-1 aspect-[3/4] overflow-hidden lg:order-2 lg:col-span-7 lg:aspect-[4/3]"
+            className="relative aspect-[4/3] overflow-hidden lg:col-span-7"
           >
             <Image
               src="/lifestyle-children.png"
               alt="Niños jugando libremente en un amplio prado verde frente a una casa campestre"
               fill
               className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 58vw"
+              sizes="(max-width:1024px)100vw,60vw"
             />
           </motion.figure>
+
         </div>
 
-        {/* Supporting pair — offset editorial composition */}
-        <div className="mt-24 grid grid-cols-1 gap-x-12 gap-y-16 md:mt-40 lg:grid-cols-12">
-          <motion.figure
-            variants={imageReveal}
+        {/* ================= BLOQUE 3 ================= */}
+
+        <div className="mt-32 grid gap-20 lg:mt-48 lg:grid-cols-2 lg:gap-16">
+
+          <motion.div
+            variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="relative aspect-[4/3] overflow-hidden lg:col-span-6 lg:mt-24"
+            className="flex flex-col"
           >
-            <Image
-              src="/lifestyle-work.png"
-              alt="Rincón de trabajo minimalista junto a una ventana con vista a las colinas"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </motion.figure>
+            <motion.figure
+              variants={imageReveal}
+              className="relative aspect-[4/3] overflow-hidden"
+            >
+              <Image
+                src="/lifestyle-work.png"
+                alt="Espacio de trabajo con vista a la naturaleza"
+                fill
+                className="object-cover"
+                sizes="(max-width:1024px)100vw,50vw"
+              />
+            </motion.figure>
 
-          <motion.figure
-            variants={imageReveal}
+            <div className="mt-10">
+              <span className="text-[0.65rem] font-light uppercase tracking-[0.4em] text-[#556B2F]">
+                Productividad
+              </span>
+
+              <h3 className="mt-5 font-serif text-3xl font-light leading-tight md:text-4xl">
+                Trabaja desde casa sin dejar de sentirte conectado con la naturaleza.
+              </h3>
+
+              <p className="mt-6 max-w-md text-base font-light leading-relaxed text-[#6B6B5E]">
+                Un espacio silencioso para concentrarte, reuniones sin ruido y
+                pausas mirando el paisaje en lugar de edificios. La tranquilidad
+                también mejora la forma de trabajar.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="relative aspect-[3/4] overflow-hidden lg:col-span-6"
+            className="flex flex-col lg:pt-20"
           >
-            <Image
-              src="/lifestyle-weekend.png"
-              alt="Pareja disfrutando del atardecer en una terraza con vista a la sabana"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </motion.figure>
+            <motion.figure
+              variants={imageReveal}
+              className="relative aspect-[3/4] overflow-hidden"
+            >
+              <Image
+                src="/lifestyle-weekend.png"
+                alt="Pareja disfrutando del atardecer en una terraza"
+                fill
+                className="object-cover"
+                sizes="(max-width:1024px)100vw,50vw"
+              />
+            </motion.figure>
+
+            <div className="mt-10">
+              <span className="text-[0.65rem] font-light uppercase tracking-[0.4em] text-[#556B2F]">
+                Calidad de vida
+              </span>
+
+              <h3 className="mt-5 font-serif text-3xl font-light leading-tight md:text-4xl">
+                Los mejores fines de semana son los que empiezan al abrir la puerta de tu casa.
+              </h3>
+
+              <p className="mt-6 max-w-md text-base font-light leading-relaxed text-[#6B6B5E]">
+                Ya no necesitas escapar de la ciudad cada viernes. Vivir aquí
+                significa despertar cada día con la sensación de estar de viaje,
+                sin dejar de estar cerca de Bogotá.
+              </p>
+            </div>
+          </motion.div>
+
         </div>
 
-        {/* Closing story */}
+        {/* ================= FRASE FINAL ================= */}
+
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="mx-auto mt-28 max-w-3xl text-center md:mt-40"
+          className="mx-auto mt-36 max-w-5xl text-center md:mt-52"
         >
-          <p className="font-serif text-3xl font-light leading-[1.25] tracking-tight text-balance md:text-5xl">
-            Imagina fines de semana que no exigen salir de la ciudad, porque ya estás donde siempre quisiste estar.
+          <span className="text-[0.65rem] font-light uppercase tracking-[0.45em] text-[#556B2F]">
+            Balcones de la Sabana III
+          </span>
+
+          <p className="mt-8 font-serif text-4xl font-light leading-[1.25] tracking-tight text-balance md:text-6xl">
+            Porque el verdadero lujo no es tener más.
+            <br />
+            Es vivir mejor cada día.
           </p>
         </motion.div>
+
       </div>
     </section>
   )

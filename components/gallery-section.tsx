@@ -59,13 +59,16 @@ export function GallerySection() {
 
   useEffect(() => {
     if (activeIndex === null) return
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close()
       if (e.key === "ArrowRight") next()
       if (e.key === "ArrowLeft") prev()
     }
+
     window.addEventListener("keydown", onKey)
     document.body.style.overflow = "hidden"
+
     return () => {
       window.removeEventListener("keydown", onKey)
       document.body.style.overflow = ""
@@ -73,9 +76,11 @@ export function GallerySection() {
   }, [activeIndex, close, next, prev])
 
   return (
-    <section id="galeria" className="bg-background px-6 py-24 md:px-12 md:py-40">
-      <div className="mx-auto max-w-7xl">
+    <section className="bg-[#F5F1E8] px-6 py-24 md:px-12 md:py-40">
+      <div id="galeria" className="mx-auto max-w-7xl scroll-mt-40">
+
         {/* Header */}
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -83,15 +88,15 @@ export function GallerySection() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 max-w-2xl md:mb-24"
         >
-          <span className="text-[0.7rem] font-light uppercase tracking-[0.4em] text-muted-foreground">
+          <span className="text-[0.7rem] font-light uppercase tracking-[0.4em] text-[#556B2F]">
             Galería
           </span>
-          <h2 className="mt-6 text-balance font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground md:text-6xl">
+
+          <h2 className="mt-6 text-balance font-serif text-4xl font-light leading-[1.1] tracking-tight text-[#2D2D25] md:text-6xl">
             Recorra cada rincón antes de conocerlo en persona.
           </h2>
-        </motion.div>
+        </motion.div>        {/* Masonry */}
 
-        {/* Masonry */}
         <div className="columns-1 gap-6 sm:columns-2 lg:columns-3 [&>*]:mb-6">
           {images.map((image, index) => (
             <motion.button
@@ -101,8 +106,24 @@ export function GallerySection() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: (index % 3) * 0.08 }}
-              className="group relative block w-full overflow-hidden rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              transition={{
+                duration: 0.8,
+                ease: [0.22, 1, 0.36, 1],
+                delay: (index % 3) * 0.08,
+              }}
+              className="
+                group
+                relative
+                block
+                w-full
+                overflow-hidden
+                rounded-2xl
+                focus:outline-none
+                focus-visible:ring-2
+                focus-visible:ring-[#556B2F]
+                focus-visible:ring-offset-2
+                focus-visible:ring-offset-[#EEF3EA]
+              "
               aria-label={`Ampliar imagen: ${image.alt}`}
             >
               <Image
@@ -110,20 +131,50 @@ export function GallerySection() {
                 alt={image.alt}
                 width={900}
                 height={index % 2 === 0 ? 1200 : 700}
-                className="h-auto w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                className="
+                  h-auto
+                  w-full
+                  object-cover
+                  transition-transform
+                  duration-700
+                  ease-out
+                  group-hover:scale-[1.04]
+                "
               />
-              <div className="absolute inset-0 bg-foreground/0 transition-colors duration-500 group-hover:bg-foreground/20" />
-              <div className="absolute inset-x-0 bottom-0 translate-y-3 p-6 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                <span className="text-xs font-light uppercase tracking-[0.35em] text-background drop-shadow">
+
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-[#556B2F]/0
+                  transition-colors
+                  duration-500
+                  group-hover:bg-[#556B2F]/20
+                "
+              />
+
+              <div
+                className="
+                  absolute
+                  inset-x-0
+                  bottom-0
+                  translate-y-3
+                  p-6
+                  opacity-0
+                  transition-all
+                  duration-500
+                  group-hover:translate-y-0
+                  group-hover:opacity-100
+                "
+              >
+                <span className="text-xs font-light uppercase tracking-[0.35em] text-[#FAF8F2] drop-shadow">
                   {image.category}
                 </span>
               </div>
             </motion.button>
           ))}
         </div>
-      </div>
-
-      {/* Lightbox */}
+      </div>      {/* Lightbox */}
       <AnimatePresence>
         {activeIndex !== null && (
           <motion.div
@@ -131,40 +182,43 @@ export function GallerySection() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-foreground/95 p-4 md:p-10"
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-[#1F241D]/95 p-4 md:p-10"
             onClick={close}
             role="dialog"
             aria-modal="true"
             aria-label="Vista ampliada de la galería"
           >
+            {/* Cerrar */}
             <button
               type="button"
               onClick={close}
-              className="absolute right-5 top-5 z-10 flex h-11 w-11 items-center justify-center rounded-full text-background/80 transition-colors hover:bg-background/10 hover:text-background"
+              className="absolute right-5 top-5 z-10 flex h-11 w-11 items-center justify-center rounded-full text-[#FAF8F2]/80 transition-colors hover:bg-white/10 hover:text-[#FAF8F2]"
               aria-label="Cerrar"
             >
               <X className="h-6 w-6" strokeWidth={1.5} />
             </button>
 
+            {/* Flecha izquierda */}
             <button
               type="button"
               onClick={(e) => {
                 e.stopPropagation()
                 prev()
               }}
-              className="absolute left-3 z-10 flex h-12 w-12 items-center justify-center rounded-full text-background/80 transition-colors hover:bg-background/10 hover:text-background md:left-8"
+              className="absolute left-3 z-10 flex h-12 w-12 items-center justify-center rounded-full text-[#FAF8F2]/80 transition-colors hover:bg-white/10 hover:text-[#FAF8F2] md:left-8"
               aria-label="Imagen anterior"
             >
               <ChevronLeft className="h-7 w-7" strokeWidth={1.5} />
             </button>
 
+            {/* Flecha derecha */}
             <button
               type="button"
               onClick={(e) => {
                 e.stopPropagation()
                 next()
               }}
-              className="absolute right-3 z-10 flex h-12 w-12 items-center justify-center rounded-full text-background/80 transition-colors hover:bg-background/10 hover:text-background md:right-8"
+              className="absolute right-3 z-10 flex h-12 w-12 items-center justify-center rounded-full text-[#FAF8F2]/80 transition-colors hover:bg-white/10 hover:text-[#FAF8F2] md:right-8"
               aria-label="Imagen siguiente"
             >
               <ChevronRight className="h-7 w-7" strokeWidth={1.5} />
@@ -176,7 +230,10 @@ export function GallerySection() {
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="relative flex max-h-full max-w-6xl flex-col items-center"
                 onClick={(e) => e.stopPropagation()}
               >
@@ -188,8 +245,9 @@ export function GallerySection() {
                   className="max-h-[80vh] w-auto rounded-lg object-contain"
                   priority
                 />
+
                 <figcaption className="mt-5 text-center">
-                  <span className="text-xs font-light uppercase tracking-[0.35em] text-background/70">
+                  <span className="text-xs font-light uppercase tracking-[0.35em] text-[#FAF8F2]/70">
                     {images[activeIndex].category}
                   </span>
                 </figcaption>
