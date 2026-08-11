@@ -15,8 +15,8 @@ const contactItems = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+57 310 202 8270",
-    href: "https://wa.me/573102028270",
+    value: "+57 314 293 2977",
+    href: "https://wa.me/573142932977",
   },
   {
     icon: Mail,

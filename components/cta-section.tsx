@@ -18,7 +18,7 @@ export function CtaSection() {
 
       {/* Background photography */}
       <Image
-        src="/cta-visit.png"
+        src="/p1.jpeg"
         alt="Casa de campo al atardecer en la sabana de Bogotá"
         fill
         priority
@@ -82,7 +82,7 @@ export function CtaSection() {
 
 
           <a
-            href="https://wa.me/573102028270"
+            href="https://wa.me/573142932977"
             target="_blank"
             rel="noopener noreferrer"
             className="

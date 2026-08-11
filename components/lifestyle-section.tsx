@@ -61,122 +61,123 @@ export function LifestyleSection() {
 
         <div className="mt-24 lg:mt-32">
 
-          <motion.figure
-            variants={imageReveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="relative aspect-[16/9] overflow-hidden"
-          >
-            <Image
-              src="/lifestyle-main.png"
-              alt="Interior campestre moderno abierto a una terraza con vista a las colinas de la sabana"
-              fill
-              priority
-              className="object-cover"
-              sizes="100vw"
-            />
-          </motion.figure>
+  <motion.figure
+    variants={imageReveal}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, margin: "-80px" }}
+    className="relative mx-auto aspect-[16/9] w-full max-w-5xl overflow-hidden"
+  >
+    <video
+      src="/planoFrenteCasa.mp4"
+      autoPlay
+      muted
+      loop
+      playsInline
+      className="absolute inset-0 h-full w-full object-cover"
+    />
+  </motion.figure>
 
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="mx-auto mt-14 max-w-4xl text-center"
-          >
-            <p className="font-serif text-3xl font-light leading-[1.45] text-balance md:text-5xl">
-              Imagina terminar tu jornada laboral rodeado de naturaleza,
-              escuchando el viento entre los árboles en lugar del tráfico.
-            </p>
-          </motion.div>
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    className="mx-auto mt-14 max-w-4xl text-center"
+  >
+    <p className="font-serif text-3xl font-light leading-[1.45] text-balance md:text-5xl">
+      Imagina terminar tu jornada laboral rodeado de naturaleza,
+      escuchando el viento entre los árboles en lugar del tráfico.
+    </p>
+  </motion.div>
 
-        </div>
+</div>
 
         {/* ================= BLOQUE 2 ================= */}
 
         <div className="mt-32 grid items-center gap-16 lg:mt-44 lg:grid-cols-12">
 
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="lg:col-span-5"
-          >
-            <span className="text-[0.65rem] font-light uppercase tracking-[0.4em] text-[#556B2F]">
-              Pensado para la familia
-            </span>
+                <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        className="lg:col-span-5"
+      >
+        <span className="text-[0.65rem] font-light uppercase tracking-[0.4em] text-[#556B2F]">
+          Pensado para la familia
+        </span>
 
-            <h3 className="mt-6 font-serif text-3xl font-light leading-tight md:text-5xl">
-              Imagina a tus hijos creciendo con más espacio.
-            </h3>
+        <h3 className="mt-6 font-serif text-3xl font-light leading-tight md:text-5xl">
+          Imagina a tu familia creciendo con más espacio.
+        </h3>
 
-            <p className="mt-8 max-w-md text-base font-light leading-relaxed text-[#6B6B5E]">
-              Mañanas al aire libre, tardes sin pantallas y la libertad de correr
-              descalzos sobre el pasto. Aquí la infancia sucede a otro ritmo,
-              rodeada de naturaleza y tranquilidad.
-            </p>
-          </motion.div>
+        <p className="mt-8 max-w-md text-base font-light leading-relaxed text-[#6B6B5E]">
+          Mañanas al aire libre, tardes sin pantallas y la libertad de la naturaleza. Aquí las exxperiencias suceden a otro ritmo,
+          rodeadas de tranquilidad.
+        </p>
+      </motion.div>
 
-          <motion.figure
-            variants={imageReveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="relative aspect-[4/3] overflow-hidden lg:col-span-7"
-          >
-            <Image
-              src="/lifestyle-children.png"
-              alt="Niños jugando libremente en un amplio prado verde frente a una casa campestre"
-              fill
-              className="object-cover"
-              sizes="(max-width:1024px)100vw,60vw"
-            />
-          </motion.figure>
+      <motion.figure
+        variants={imageReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        className="relative aspect-[4/3] overflow-hidden lg:col-span-7"
+      >
+        <video
+          src="/p7.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </motion.figure>
 
-        </div>
+    </div>
 
         {/* ================= BLOQUE 3 ================= */}
 
         <div className="mt-32 grid gap-20 lg:mt-48 lg:grid-cols-2 lg:gap-16">
 
           <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="flex flex-col"
-          >
-            <motion.figure
-              variants={imageReveal}
-              className="relative aspect-[4/3] overflow-hidden"
-            >
-              <Image
-                src="/lifestyle-work.png"
-                alt="Espacio de trabajo con vista a la naturaleza"
-                fill
-                className="object-cover"
-                sizes="(max-width:1024px)100vw,50vw"
-              />
-            </motion.figure>
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, margin: "-80px" }}
+  className="flex flex-col"
+>
+  <motion.figure
+    variants={imageReveal}
+    className="relative aspect-[4/3] overflow-hidden"
+  >
+    <video
+      src="/p5.mp4"
+      autoPlay
+      muted
+      loop
+      playsInline
+      className="absolute inset-0 h-full w-full object-cover"
+    />
+  </motion.figure>
 
-            <div className="mt-10">
-              <span className="text-[0.65rem] font-light uppercase tracking-[0.4em] text-[#556B2F]">
-                Productividad
-              </span>
+  <div className="mt-10">
+    <span className="text-[0.65rem] font-light uppercase tracking-[0.4em] text-[#556B2F]">
+      Productividad
+    </span>
 
-              <h3 className="mt-5 font-serif text-3xl font-light leading-tight md:text-4xl">
-                Trabaja desde casa sin dejar de sentirte conectado con la naturaleza.
-              </h3>
+    <h3 className="mt-5 font-serif text-3xl font-light leading-tight md:text-4xl">
+      Trabaja desde casa sin dejar de sentirte conectado con la naturaleza.
+    </h3>
 
-              <p className="mt-6 max-w-md text-base font-light leading-relaxed text-[#6B6B5E]">
-                Un espacio silencioso para concentrarte, reuniones sin ruido y
-                pausas mirando el paisaje en lugar de edificios. La tranquilidad
-                también mejora la forma de trabajar.
-              </p>
-            </div>
-          </motion.div>
+    <p className="mt-6 max-w-md text-base font-light leading-relaxed text-[#6B6B5E]">
+      Un espacio silencioso para concentrarte, reuniones sin ruido y
+      pausas mirando el paisaje en lugar de edificios. La tranquilidad
+      también mejora la forma de trabajar.
+    </p>
+  </div>
+</motion.div>
 
           <motion.div
             variants={fadeUp}
@@ -190,7 +191,7 @@ export function LifestyleSection() {
               className="relative aspect-[3/4] overflow-hidden"
             >
               <Image
-                src="/lifestyle-weekend.png"
+                src="/p6.jpeg"
                 alt="Pareja disfrutando del atardecer en una terraza"
                 fill
                 className="object-cover"

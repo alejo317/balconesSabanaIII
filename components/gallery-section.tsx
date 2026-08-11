@@ -13,34 +13,40 @@ type GalleryImage = {
 
 const images: GalleryImage[] = [
   {
-    src: "/gallery-drone.png",
+    src: "/p1.jpeg",
     alt: "Vista aérea del conjunto de casas campestres entre las colinas de la sabana",
-    category: "Vista aérea",
+    category: "",
   },
   {
-    src: "/gallery-interior.png",
+    src: "/g1.jpeg",
+    alt: "Vista aérea del conjunto de casas campestres entre las colinas de la sabana",
+    category: "",
+  },
+
+  {
+    src: "/g2.jpeg",
     alt: "Interior minimalista con ventanales de piso a techo hacia las colinas",
-    category: "Interiores",
+    category: "",
   },
   {
-    src: "/gallery-sunset.png",
+    src: "/g3.jpeg",
     alt: "Atardecer dorado sobre la sabana andina",
-    category: "Atardeceres",
+    category: "",
   },
   {
-    src: "/gallery-garden.png",
+    src: "/g4.jpeg",
     alt: "Jardín paisajístico con senderos de piedra y vegetación nativa",
-    category: "Jardines",
+    category: "",
   },
   {
-    src: "/gallery-architecture.png",
+    src: "/g5.jpeg",
     alt: "Fachada de arquitectura moderna integrada al paisaje",
-    category: "Arquitectura",
+    category: "",
   },
   {
-    src: "/gallery-terrace.png",
-    alt: "Terraza al anochecer con vista a las montañas",
-    category: "Terrazas",
+    src: "/g6.jpeg",
+    alt: "Fachada de arquitectura moderna integrada al paisaje",
+    category: "",
   },
 ]
 

@@ -18,7 +18,7 @@ const faqs = [
   {
     question: "¿Ofrecen opciones de financiación?",
     answer:
-      "Trabajamos con planes de pago flexibles y podemos acompañarle en el proceso con entidades financieras aliadas. Nos sentamos con usted a encontrar un esquema que se ajuste a su realidad, sin presiones.",
+      "Trabajamos con planes de pago flexibles y podemos acompañarle en el proceso. Nos sentamos con usted a encontrar un esquema que se ajuste a su realidad, sin presiones.",
   },
   {
     question: "¿Puedo visitar el proyecto antes de decidir?",
@@ -28,7 +28,7 @@ const faqs = [
   {
     question: "¿En qué estado se encuentra la construcción?",
     answer:
-      "Cada casa se construye con materiales de primera y acabados cuidados hasta el último detalle. Le mostramos avances reales, fotografías y cronogramas claros en cada etapa del proceso.",
+      "Cada casa se construye con materiales de primera y acabados cuidados hasta el último detalle. Le mostramos avances reales con la gran opción de escoger los acabados a gusto.",
   },
   {
     question: "¿Qué documentación entregan?",
@@ -38,7 +38,7 @@ const faqs = [
   {
     question: "¿Qué garantías tengo sobre mi inversión?",
     answer:
-      "Respaldamos cada entrega con garantías por escrito sobre estructura y acabados. Nuestro apellido está detrás de este proyecto, y esa es la garantía que más cuidamos.",
+      "Respaldamos cada entrega con garantías por escrito sobre estructura y acabados. Nuestro nombre está detrás de este proyecto, y esa es la garantía que más cuidamos.",
   },
 ]
 

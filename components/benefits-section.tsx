@@ -24,9 +24,9 @@ const benefits = [
   },
   {
     icon: Compass,
-    title: "Acompañamiento personalizado",
+    title: "Acabados a elección",
     description:
-      "Un asesor dedicado te guía en cada paso, sin prisas y con total atención a tus necesidades.",
+      "Sientete libre de elegir los acabados que mejor se adapten a tu estilo y gusto personal",
   },
 ]
 

@@ -103,87 +103,41 @@ export function LocationSection() {
 
           {/* Left: Map */}
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={inView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative h-[420px] overflow-hidden rounded-3xl border border-[#D8D0C2] lg:h-full lg:min-h-[560px]"
-          >            <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18911.52650083096!2d-74.08943064032177!3d4.828533394229161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f87006eb02c85%3A0x3f4d347d33e0f4e3!2sO.%20Balcones%20de%20la%20sabana%203!5e0!3m2!1ses-419!2sco!4v1785280783072!5m2!1ses-419!2sco"
-  className="absolute inset-0 h-full w-full border-0"
-  loading="lazy"
-  allowFullScreen
-  referrerPolicy="strict-origin-when-cross-origin"
-/>
+          {/* Left: Location visual */}
 
-            {/* Center pin */}
-
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative flex flex-col items-center">
-
-                <a
-  href="https://maps.google.com/?q=O.+Balcones+de+la+Sabana+3,+Cota,+Cundinamarca"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Abrir ubicación en Google Maps"
+<motion.div
+  initial={{ opacity: 0, scale: 0.98 }}
+  animate={inView ? { opacity: 1, scale: 1 } : {}}
+  transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+  className="relative h-[420px] overflow-hidden rounded-3xl lg:h-full lg:min-h-[560px]"
 >
-  <motion.span
-    initial={{ scale: 0 }}
-    animate={inView ? { scale: 1 } : {}}
-    transition={{
-      duration: 0.6,
-      delay: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-    }}
-    whileHover={{ scale: 1.08 }}
-    whileTap={{ scale: 0.95 }}
-    className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-[#556B2F] text-[#FAF8F2] shadow-xl ring-8 ring-[#556B2F]/20 transition-all"
-  >
-    <MapPin
-      className="h-5 w-5"
-      strokeWidth={1.5}
-    />
-  </motion.span>
-</a>
+  <video
+    src="/drone-location.mp4"
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 h-full w-full object-cover"
+  />
 
-                <span className="mt-3 rounded-full bg-[#FAF8F2]/95 px-4 py-1.5 text-xs font-light uppercase tracking-[0.25em] text-[#2D2D25] backdrop-blur-sm">
-                  Balcones de la Sabana III
-                </span>
+  <div className="absolute inset-0 bg-gradient-to-t from-[#1F241D]/60 via-transparent to-transparent" />
 
-              </div>
-            </div>
+  <div className="absolute bottom-6 left-6 right-6">
+    <div className="rounded-2xl bg-[#FAF8F2]/95 p-6 backdrop-blur-sm">
+      <span className="text-xs font-light uppercase tracking-[0.3em] text-[#556B2F]">
+        Ubicación
+      </span>
 
-            {/* Zoom controls */}
+      <h3 className="mt-2 font-serif text-2xl font-light text-[#2D2D25]">
+        La Moya, Cota
+      </h3>
 
-            <div className="absolute right-5 top-5 flex flex-col overflow-hidden rounded-xl border border-[#D8D0C2] bg-[#FAF8F2]/95 backdrop-blur-sm">
-
-              <button
-                type="button"
-                aria-label="Acercar mapa"
-                className="flex h-10 w-10 items-center justify-center text-[#556B2F] transition-colors hover:bg-[#ECE6D8]"
-              >
-                <Plus
-                  className="h-4 w-4"
-                  strokeWidth={1.5}
-                />
-              </button>
-
-              <span className="h-px w-full bg-[#D8D0C2]" />
-
-              <button
-                type="button"
-                aria-label="Alejar mapa"
-                className="flex h-10 w-10 items-center justify-center text-[#556B2F] transition-colors hover:bg-[#ECE6D8]"
-              >
-                <Minus
-                  className="h-4 w-4"
-                  strokeWidth={1.5}
-                />
-              </button>
-
-            </div>
-
-          </motion.div>
+      <p className="mt-2 text-sm font-light leading-relaxed text-[#6B6B5E]">
+        Naturaleza, tranquilidad y conexión con Bogotá.
+      </p>
+    </div>
+  </div>
+</motion.div>
 
           {/* Right: Benefit cards */}
 
